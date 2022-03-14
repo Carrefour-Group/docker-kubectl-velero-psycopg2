@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM python:3.8-slim
 
 ARG DEBIAN_FRONTEND=noninteractive
 ARG KUBECTL_VERSION=v1.20.0
@@ -11,7 +11,7 @@ SHELL ["/usr/bin/env", "bash", "-c"]
 RUN \
   mkdir -p /opt/onecaas/bin && \
   apt-get update && apt-get upgrade -y && \
-  apt-get install -y python3 python3-pip python3-dev wget libpq-dev && \
+  apt-get install -y python3 python3-pip wget && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/* && \
   wget -q https://github.com/vmware-tanzu/velero/releases/download/${VELERO_VERSION}/velero-${VELERO_VERSION}-linux-amd64.tar.gz \
