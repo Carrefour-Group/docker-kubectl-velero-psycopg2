@@ -1,4 +1,4 @@
-FROM python:3.8-slim
+FROM python:3.10.0-slim
 
 ARG DEBIAN_FRONTEND=noninteractive
 ARG KUBECTL_VERSION=v1.20.0
